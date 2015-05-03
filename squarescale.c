@@ -42,18 +42,21 @@ void squarescale_bang(t_squarescale *x)
 
     outlet_float(x->f_factor_out, factor);
     outlet_float(x->f_scale_out, out_val);
-
-
 }
 
-void squarescale_float(t_squarescale *x, t_floatarg input)
+void squarescale_set(t_squarescale *x, t_floatarg input)
 {
     if (input <= 0) {
         post("squarescale input must be greater than zero!");
         return;
     }
     x->f_last_input = input;
+}
 
+
+void squarescale_float(t_squarescale *x, t_floatarg input)
+{
+    squarescale_set(x, input);
     squarescale_bang(x);
 }
 
@@ -110,6 +113,11 @@ void squarescale_setup(void)
                     (t_method)squarescale_range,
                     gensym("range"),
                     A_DEFFLOAT, A_DEFFLOAT, 0);
+
+    class_addmethod(squarescale_class,
+                    (t_method)squarescale_set,
+                    gensym("set"),
+                    A_DEFFLOAT);
 
     class_addfloat(squarescale_class, (t_method)squarescale_float);
     class_addbang(squarescale_class, (t_method)squarescale_bang);
