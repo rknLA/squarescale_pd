@@ -1,0 +1,19 @@
+#N canvas 465 181 450 300 10;
+#X msg 181 69 range 60 150;
+#X floatatom 102 33 5 0 0 0 - - -;
+#X obj 53 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 102 131 5 0 0 0 - - -;
+#X floatatom 207 127 5 0 0 0 - - -;
+#X msg 149 33 50;
+#X msg 189 38 120.4;
+#X obj 102 98 squarescale 50 100;
+#X msg 250 38 set 24;
+#X connect 0 0 7 0;
+#X connect 1 0 7 0;
+#X connect 2 0 7 0;
+#X connect 5 0 7 0;
+#X connect 6 0 7 0;
+#X connect 7 0 3 0;
+#X connect 7 1 4 0;
+#X connect 8 0 7 0;
