@@ -1,10 +1,10 @@
 # C
-.o
+*.o
 
 # Pure Data
-.pd_darwin
-.pd_linux
-.pd
+*.pd_darwin
+*.pd_linux
+*.pd
 
 # Xcode
 .DS_Store
