@@ -1,3 +1,8 @@
+# Original makefile by Frank Barknecht.
+# Taken from http://forum.pdpatchrepo.info/topic/3789/compiler-flags-for-building-an-external-in-darwin/6
+# and modified to remove `ppc`.
+# This file is not covered by the LICENSE file in this git repo.
+
 NAME=squarescale
 CFLAGS = -std=c99 -DPD -O3 -Wall -W -Wshadow -Wstrict-prototypes -Wno-unused -Wno-parentheses -Wno-switch -DMUUG_INTERPOLATE=1 -DMUUG_TILDE_TABLE_SIZE=512
 
